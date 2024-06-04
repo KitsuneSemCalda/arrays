@@ -1,12 +1,13 @@
 package arrays
 
-import "slices"
-
 /*
 # Clone
 
 the Clone method returns a shallow copy of the array elements
 */
-func (a Array[T]) Clone() []T {
-	return slices.Clone(a.elements)
+func (a Array[T]) Clone() Array[T] {
+	return Array[T]{
+		elements: a.elements,
+		lastPos:  a.lastPos,
+	}
 }
